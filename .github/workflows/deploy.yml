@@ -1,0 +1,82 @@
+# サイトの公開（GitHub Pages）と、機材リストの毎日の自動更新
+#
+# 動くタイミング:
+#   ・ファイルを更新（push）したとき
+#   ・毎日1回（日本時間の朝4時ごろ）
+#   ・Actions の画面から「Run workflow」を押したとき（機材PDFが更新された直後に、すぐ反映したいとき）
+#
+# 流れ: 機材リストPDFを取得して docs/data/equipments.json を更新 → docs/ をサイトとして公開
+# PDFの取得に失敗しても、前回のリストを残して公開を続け、画面に注意書きを出す。
+# （失敗した日は、この実行が「失敗」になり、GitHubからメールで知らせが届く）
+
+name: 公開と機材リストの更新
+
+on:
+  push:
+    branches: [main]
+  schedule:
+    - cron: "17 19 * * *" # UTC 19:17 = 日本時間 4:17
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    outputs:
+      update_failed: ${{ steps.update.outcome == 'failure' }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: tools/requirements.txt
+
+      - name: 必要な部品を入れる
+        run: pip install -r tools/requirements.txt
+
+      - name: 機材リストを更新する
+        id: update
+        run: python tools/update_equipment.py
+        continue-on-error: true
+
+      # 更新した内容をリポジトリに残す（毎日コミットされるので、60日更新がなくて定期実行が止まる、ということも起きにくい）
+      - name: 更新内容を保存する
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add docs/data/equipments.json
+          git diff --cached --quiet || (git commit -m "機材リストを更新" && git push)
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: docs
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
+
+  # 機材リストの更新に失敗していたら、公開は済ませたうえで、この実行を失敗として知らせる
+  notify:
+    needs: [build, deploy]
+    if: needs.build.outputs.update_failed == 'true'
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+          echo "::error::機材リストの更新に失敗しました。サイトには前回のリストを表示しています。"
+          exit 1
