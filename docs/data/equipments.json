@@ -1,0 +1,1033 @@
+{
+ "source": "https://www.applevinegarmusicsupport.com/pdf/mif/equipments.pdf",
+ "fetchedAt": "2026-10-26T14:08:29+00:00",
+ "sections": [
+  {
+   "id": "instruments",
+   "title": "Instruments",
+   "lastUpdate": "2026/10/16",
+   "groups": [
+    {
+     "name": "Drum Set",
+     "items": [
+      {
+       "id": "instruments|Drum Set|SONOR / 80's SONOR LITE|BD 24",
+       "sub": "SONOR / 80's SONOR LITE",
+       "name": "BD 24",
+       "qty": "1",
+       "bg": "#fff2cc",
+       "unavailable": false
+      },
+      {
+       "id": "instruments|Drum Set|SONOR / 80's SONOR LITE|BD 22",
+       "sub": "SONOR / 80's SONOR LITE",
+       "name": "BD 22",
+       "qty": "1",
+       "bg": "#fff2cc",
+       "unavailable": false
+      },
+      {
+       "id": "instruments|Drum Set|SONOR / 80's SONOR LITE|BD 20",
+       "sub": "SONOR / 80's SONOR LITE",
+       "name": "BD 20",
+       "qty": "1",
+       "bg": "#fff2cc",
+       "unavailable": false
+      },
+      {
+       "id": "instruments|Drum Set|SONOR / 80's SONOR LITE|Tom 10",
+       "sub": "SONOR / 80's SONOR LITE",
+       "name": "Tom 10",
+       "qty": "1",
+       "bg": "#fff2cc",
+       "unavailable": false
+      },
+      {
+       "id": "instruments|Drum Set|SONOR / 80's SONOR LITE|Tom 12",
+       "sub": "SONOR / 80's SONOR LITE",
+       "name": "Tom 12",
+       "qty": "1",
+       "bg": "#fff2cc",
+       "unavailable": false
+      },
+      {
+       "id": "instruments|Drum Set|SONOR / 80's SONOR LITE|Tom 14",
+       "sub": "SONOR / 80's SONOR LITE",
+       "name": "Tom 14",
+       "qty": "1",
+       "bg": "#fff2cc",
+       "unavailable": false
+      },
+      {
+       "id": "instruments|Drum Set|SONOR / 80's SONOR LITE|Floor Tom 16",
+       "sub": "SONOR / 80's SONOR LITE",
+       "name": "Floor Tom 16",
+       "qty": "1",
+       "bg": "#fff2cc",
+       "unavailable": false
+      },
+      {
+       "id": "instruments|Drum Set|TAMA  / 80’s Royal Star|BD 22×14",
+       "sub": "TAMA  / 80’s Royal Star",
+       "name": "BD 22×14",
+       "qty": "1",
+       "bg": null,
+       "unavailable": false
+      },
+      {
+       "id": "instruments|Drum Set|TAMA  / 80’s Royal Star|Tom 12×8",
+       "sub": "TAMA  / 80’s Royal Star",
+       "name": "Tom 12×8",
+       "qty": "1",
+       "bg": null,
+       "unavailable": false
+      },
+      {
+       "id": "instruments|Drum Set|TAMA  / 80’s Royal Star|Tom 13×9",
+       "sub": "TAMA  / 80’s Royal Star",
+       "name": "Tom 13×9",
+       "qty": "1",
+       "bg": null,
+       "unavailable": false
+      },
+      {
+       "id": "instruments|Drum Set|TAMA  / 80’s Royal Star|Floor Tom 16×16",
+       "sub": "TAMA  / 80’s Royal Star",
+       "name": "Floor Tom 16×16",
+       "qty": "1",
+       "bg": null,
+       "unavailable": false
+      },
+      {
+       "id": "instruments|Drum Set|YAMAHA / YD3000|BD 22×14",
+       "sub": "YAMAHA / YD3000",
+       "name": "BD 22×14",
+       "qty": "1",
+       "bg": null,
+       "unavailable": false
+      },
+      {
+       "id": "instruments|Drum Set|YAMAHA / YD3000|Tom 12×8",
+       "sub": "YAMAHA / YD3000",
+       "name": "Tom 12×8",
+       "qty": "1",
+       "bg": null,
+       "unavailable": false
+      },
+      {
+       "id": "instruments|Drum Set|YAMAHA / YD3000|Tom 13×9",
+       "sub": "YAMAHA / YD3000",
+       "name": "Tom 13×9",
+       "qty": "1",
+       "bg": null,
+       "unavailable": false
+      },
+      {
+       "id": "instruments|Drum Set|YAMAHA / YD3000|Floor Tom 16×16",
+       "sub": "YAMAHA / YD3000",
+       "name": "Floor Tom 16×16",
+       "qty": "1",
+       "bg": null,
+       "unavailable": false
+      }
+     ]
+    },
+    {
+     "name": "Snare Drum",
+     "items": [
+      {
+       "id": "instruments|Snare Drum|Pearl|Chad Smith Signature Model 14\"x 5\" / Steel shell",
+       "sub": "Pearl",
+       "name": "Chad Smith Signature Model 14\"x 5\" / Steel shell",
+       "qty": "1",
+       "bg": "#fff2cc",
+       "unavailable": false
+      },
+      {
+       "id": "instruments|Snare Drum|Ludwig|LM402  14×6.5 / Supraphonic",
+       "sub": "Ludwig",
+       "name": "LM402  14×6.5 / Supraphonic",
+       "qty": "1",
+       "bg": "#fff2cc",
+       "unavailable": false
+      },
+      {
+       "id": "instruments|Snare Drum|TAMA|Stewart Copeland Signature 40th Anniversary Model 14×5.5 / Brass shell",
+       "sub": "TAMA",
+       "name": "Stewart Copeland Signature 40th Anniversary Model 14×5.5 / Brass shell",
+       "qty": "1",
+       "bg": "#fff2cc",
+       "unavailable": false
+      },
+      {
+       "id": "instruments|Snare Drum|NorthVillage Drum|NorthVillage Drum 14×4 / Vintage Maple＆Gumwood shell",
+       "sub": "NorthVillage Drum",
+       "name": "NorthVillage Drum 14×4 / Vintage Maple＆Gumwood shell",
+       "qty": "1",
+       "bg": null,
+       "unavailable": false
+      }
+     ]
+    },
+    {
+     "name": "Cymabals",
+     "items": [
+      {
+       "id": "instruments|Cymabals|Zildjian|14”  New Beat HiHat",
+       "sub": "Zildjian",
+       "name": "14”  New Beat HiHat",
+       "qty": "1",
+       "bg": null,
+       "unavailable": false
+      },
+      {
+       "id": "instruments|Cymabals|Zildjian|13”  HiHat",
+       "sub": "Zildjian",
+       "name": "13”  HiHat",
+       "qty": "1",
+       "bg": null,
+       "unavailable": false
+      },
+      {
+       "id": "instruments|Cymabals|Zildjian|20”  Ride",
+       "sub": "Zildjian",
+       "name": "20”  Ride",
+       "qty": "1",
+       "bg": null,
+       "unavailable": false
+      },
+      {
+       "id": "instruments|Cymabals|Zildjian|20”  Medium Ride - \"S\"シリーズ",
+       "sub": "Zildjian",
+       "name": "20”  Medium Ride - \"S\"シリーズ",
+       "qty": "1",
+       "bg": null,
+       "unavailable": false
+      },
+      {
+       "id": "instruments|Cymabals|PAiSTE|14”  2002  HEAVY HI-HAT   TOP / BOTTOM",
+       "sub": "PAiSTE",
+       "name": "14”  2002  HEAVY HI-HAT   TOP / BOTTOM",
+       "qty": "各1",
+       "bg": null,
+       "unavailable": false
+      },
+      {
+       "id": "instruments|Cymabals|PAiSTE|16” Master DARK CRASH",
+       "sub": "PAiSTE",
+       "name": "16” Master DARK CRASH",
+       "qty": "1",
+       "bg": null,
+       "unavailable": false
+      },
+      {
+       "id": "instruments|Cymabals|PAiSTE|18” Master DARK CRASH",
+       "sub": "PAiSTE",
+       "name": "18” Master DARK CRASH",
+       "qty": "1",
+       "bg": null,
+       "unavailable": false
+      },
+      {
+       "id": "instruments|Cymabals|PAiSTE|20” SIGNATURE Dry Crisp Ride",
+       "sub": "PAiSTE",
+       "name": "20” SIGNATURE Dry Crisp Ride",
+       "qty": "1",
+       "bg": null,
+       "unavailable": false
+      },
+      {
+       "id": "instruments|Cymabals|PAiSTE|20”  2002 NOVO CHINA 20”",
+       "sub": "PAiSTE",
+       "name": "20”  2002 NOVO CHINA 20”",
+       "qty": "1",
+       "bg": null,
+       "unavailable": false
+      },
+      {
+       "id": "instruments|Cymabals|SABIAN|18”  CRASH",
+       "sub": "SABIAN",
+       "name": "18”  CRASH",
+       "qty": "1",
+       "bg": null,
+       "unavailable": false
+      }
+     ]
+    },
+    {
+     "name": "Pedal",
+     "items": [
+      {
+       "id": "instruments|Pedal|TAMA|IRON COBRA 900",
+       "sub": "TAMA",
+       "name": "IRON COBRA 900",
+       "qty": "1",
+       "bg": null,
+       "unavailable": false
+      },
+      {
+       "id": "instruments|Pedal|Pearl|ELIMINATOR DEMON",
+       "sub": "Pearl",
+       "name": "ELIMINATOR DEMON",
+       "qty": "1",
+       "bg": null,
+       "unavailable": false
+      }
+     ]
+    },
+    {
+     "name": "HiHat Stand",
+     "items": [
+      {
+       "id": "instruments|HiHat Stand|TAMA|HH605",
+       "sub": "TAMA",
+       "name": "HH605",
+       "qty": "1",
+       "bg": null,
+       "unavailable": false
+      }
+     ]
+    },
+    {
+     "name": "Snare Stand",
+     "items": [
+      {
+       "id": "instruments|Snare Stand|TAMA|HS800W",
+       "sub": "TAMA",
+       "name": "HS800W",
+       "qty": "1",
+       "bg": null,
+       "unavailable": false
+      }
+     ]
+    },
+    {
+     "name": "Cymbal Stand",
+     "items": [
+      {
+       "id": "instruments|Cymbal Stand|TAMA|Boom Cymbal Stand",
+       "sub": "TAMA",
+       "name": "Boom Cymbal Stand",
+       "qty": "3",
+       "bg": null,
+       "unavailable": false
+      },
+      {
+       "id": "instruments|Cymbal Stand|TAMA|Straoght Cymbal Stand",
+       "sub": "TAMA",
+       "name": "Straoght Cymbal Stand",
+       "qty": "3",
+       "bg": null,
+       "unavailable": false
+      }
+     ]
+    },
+    {
+     "name": "Drum Throne",
+     "items": [
+      {
+       "id": "instruments|Drum Throne|TAMA|HT430B",
+       "sub": "TAMA",
+       "name": "HT430B",
+       "qty": "1",
+       "bg": null,
+       "unavailable": false
+      }
+     ]
+    },
+    {
+     "name": "Piano",
+     "items": [
+      {
+       "id": "instruments|Piano|KAWAI|K-400 (アップライト)",
+       "sub": "KAWAI",
+       "name": "K-400 (アップライト)",
+       "qty": "1",
+       "bg": null,
+       "unavailable": false
+      }
+     ]
+    },
+    {
+     "name": "Bass",
+     "items": [
+      {
+       "id": "instruments|Bass|Fender|American Professional Classic Precision Bass RW 3TS",
+       "sub": "Fender",
+       "name": "American Professional Classic Precision Bass RW 3TS",
+       "qty": "1",
+       "bg": null,
+       "unavailable": false
+      }
+     ]
+    },
+    {
+     "name": "Bass Amp",
+     "items": [
+      {
+       "id": "instruments|Bass Amp|AMPEG|SVT-3PRO (4Ω 450w)",
+       "sub": "AMPEG",
+       "name": "SVT-3PRO (4Ω 450w)",
+       "qty": "1",
+       "bg": null,
+       "unavailable": false
+      },
+      {
+       "id": "instruments|Bass Amp|AMPEG|B-15N 60's Vintage (30W) ※メンテナンス中",
+       "sub": "AMPEG",
+       "name": "B-15N 60's Vintage (30W) ※メンテナンス中",
+       "qty": "1",
+       "bg": "#fff2cc",
+       "unavailable": true
+      }
+     ]
+    },
+    {
+     "name": "Bass Cabinet",
+     "items": [
+      {
+       "id": "instruments|Bass Cabinet|ASHDOWN|ABM-115H (15inch 8Ω 300w)",
+       "sub": "ASHDOWN",
+       "name": "ABM-115H (15inch 8Ω 300w)",
+       "qty": "1",
+       "bg": null,
+       "unavailable": false
+      }
+     ]
+    },
+    {
+     "name": "Guitar",
+     "items": [
+      {
+       "id": "instruments|Guitar|EVERTONE|Walkürey-TL",
+       "sub": "EVERTONE",
+       "name": "Walkürey-TL",
+       "qty": "1",
+       "bg": null,
+       "unavailable": false
+      },
+      {
+       "id": "instruments|Guitar|Fender|American Professional Classic Telecaster MN BTB",
+       "sub": "Fender",
+       "name": "American Professional Classic Telecaster MN BTB",
+       "qty": "1",
+       "bg": null,
+       "unavailable": false
+      },
+      {
+       "id": "instruments|Guitar|Fender|American Professional Classic Stratocaster MN FFMG",
+       "sub": "Fender",
+       "name": "American Professional Classic Stratocaster MN FFMG",
+       "qty": "1",
+       "bg": null,
+       "unavailable": false
+      }
+     ]
+    },
+    {
+     "name": "Guitar Amp",
+     "items": [
+      {
+       "id": "instruments|Guitar Amp|BADCAT|Black Cat 30R",
+       "sub": "BADCAT",
+       "name": "Black Cat 30R",
+       "qty": "1",
+       "bg": null,
+       "unavailable": false
+      },
+      {
+       "id": "instruments|Guitar Amp|Fender|Twin Reverb Silverface 70's Vintage w/C12K (135W)",
+       "sub": "Fender",
+       "name": "Twin Reverb Silverface 70's Vintage w/C12K (135W)",
+       "qty": "1",
+       "bg": null,
+       "unavailable": false
+      },
+      {
+       "id": "instruments|Guitar Amp|Marshall|DSL100H",
+       "sub": "Marshall",
+       "name": "DSL100H",
+       "qty": "1",
+       "bg": null,
+       "unavailable": false
+      },
+      {
+       "id": "instruments|Guitar Amp|Marshall|Artiste 2040 Combo 1973 Vintage w/G12H (50W)",
+       "sub": "Marshall",
+       "name": "Artiste 2040 Combo 1973 Vintage w/G12H (50W)",
+       "qty": "1",
+       "bg": "#fff2cc",
+       "unavailable": false
+      },
+      {
+       "id": "instruments|Guitar Amp|Matchless|Tornado 15 ※メンテナンス中",
+       "sub": "Matchless",
+       "name": "Tornado 15 ※メンテナンス中",
+       "qty": "1",
+       "bg": "#fff2cc",
+       "unavailable": true
+      }
+     ]
+    },
+    {
+     "name": "Guitar Cabinet",
+     "items": [
+      {
+       "id": "instruments|Guitar Cabinet|BADCAT|30R 2×12inch Vintage (4Ω)",
+       "sub": "BADCAT",
+       "name": "30R 2×12inch Vintage (4Ω)",
+       "qty": "1",
+       "bg": null,
+       "unavailable": false
+      },
+      {
+       "id": "instruments|Guitar Cabinet|Fender|Vibro King 2x12 Cabinet (4Ω 140w)",
+       "sub": "Fender",
+       "name": "Vibro King 2x12 Cabinet (4Ω 140w)",
+       "qty": "1",
+       "bg": null,
+       "unavailable": false
+      },
+      {
+       "id": "instruments|Guitar Cabinet|SHINOS|ROCKET【SHINOS & L】(8Ω 120w)",
+       "sub": "SHINOS",
+       "name": "ROCKET【SHINOS & L】(8Ω 120w)",
+       "qty": "1",
+       "bg": null,
+       "unavailable": false
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "boss",
+   "title": "BOSS Pedals",
+   "lastUpdate": "2026/10/16",
+   "groups": [
+    {
+     "name": "ACOUSTIC",
+     "items": [
+      {
+       "id": "boss|ACOUSTIC|AC-3|Acoustic Simulator",
+       "sub": "AC-3",
+       "name": "Acoustic Simulator",
+       "qty": "",
+       "bg": null,
+       "unavailable": false
+      },
+      {
+       "id": "boss|ACOUSTIC|AD-2|Acoustic Preamp",
+       "sub": "AD-2",
+       "name": "Acoustic Preamp",
+       "qty": "",
+       "bg": null,
+       "unavailable": false
+      }
+     ]
+    },
+    {
+     "name": "BASS PEDAL",
+     "items": [
+      {
+       "id": "boss|BASS PEDAL|BB-1X|Bass Driver",
+       "sub": "BB-1X",
+       "name": "Bass Driver",
+       "qty": "",
+       "bg": null,
+       "unavailable": false
+      },
+      {
+       "id": "boss|BASS PEDAL|BC-1X|Bass Comp",
+       "sub": "BC-1X",
+       "name": "Bass Comp",
+       "qty": "",
+       "bg": null,
+       "unavailable": false
+      },
+      {
+       "id": "boss|BASS PEDAL|CEB-3|Bass Chorus",
+       "sub": "CEB-3",
+       "name": "Bass Chorus",
+       "qty": "",
+       "bg": null,
+       "unavailable": false
+      },
+      {
+       "id": "boss|BASS PEDAL|GEB-7|Bass Equalizer",
+       "sub": "GEB-7",
+       "name": "Bass Equalizer",
+       "qty": "",
+       "bg": null,
+       "unavailable": false
+      },
+      {
+       "id": "boss|BASS PEDAL|LMB-3|Bass Limiter Enhancer",
+       "sub": "LMB-3",
+       "name": "Bass Limiter Enhancer",
+       "qty": "",
+       "bg": null,
+       "unavailable": false
+      },
+      {
+       "id": "boss|BASS PEDAL|ODB-3|Bass OverDrive",
+       "sub": "ODB-3",
+       "name": "Bass OverDrive",
+       "qty": "",
+       "bg": null,
+       "unavailable": false
+      }
+     ]
+    },
+    {
+     "name": "BOOSTER / PREAMP",
+     "items": [
+      {
+       "id": "boss|BOOSTER / PREAMP|BP-1W|Booster / Preamp",
+       "sub": "BP-1W",
+       "name": "Booster / Preamp",
+       "qty": "",
+       "bg": null,
+       "unavailable": false
+      },
+      {
+       "id": "boss|BOOSTER / PREAMP|IR-2|Amp & Cabinet",
+       "sub": "IR-2",
+       "name": "Amp & Cabinet",
+       "qty": "",
+       "bg": null,
+       "unavailable": false
+      }
+     ]
+    },
+    {
+     "name": "DELAY",
+     "items": [
+      {
+       "id": "boss|DELAY|DD-3T|Digital Delay",
+       "sub": "DD-3T",
+       "name": "Digital Delay",
+       "qty": "",
+       "bg": null,
+       "unavailable": false
+      },
+      {
+       "id": "boss|DELAY|DD-8|Digital Delay",
+       "sub": "DD-8",
+       "name": "Digital Delay",
+       "qty": "",
+       "bg": null,
+       "unavailable": false
+      },
+      {
+       "id": "boss|DELAY|DM-2W|Delay",
+       "sub": "DM-2W",
+       "name": "Delay",
+       "qty": "",
+       "bg": null,
+       "unavailable": false
+      },
+      {
+       "id": "boss|DELAY|SDE-3|Dual Digital Delay",
+       "sub": "SDE-3",
+       "name": "Dual Digital Delay",
+       "qty": "",
+       "bg": null,
+       "unavailable": false
+      },
+      {
+       "id": "boss|DELAY|TE-2|Tera Echo",
+       "sub": "TE-2",
+       "name": "Tera Echo",
+       "qty": "",
+       "bg": null,
+       "unavailable": false
+      }
+     ]
+    },
+    {
+     "name": "DISTORTION",
+     "items": [
+      {
+       "id": "boss|DISTORTION|DS-1W|Distortion",
+       "sub": "DS-1W",
+       "name": "Distortion",
+       "qty": "",
+       "bg": null,
+       "unavailable": false
+      },
+      {
+       "id": "boss|DISTORTION|DS-1X|Distortion",
+       "sub": "DS-1X",
+       "name": "Distortion",
+       "qty": "",
+       "bg": null,
+       "unavailable": false
+      },
+      {
+       "id": "boss|DISTORTION|DS-2|TURBO Distortion",
+       "sub": "DS-2",
+       "name": "TURBO Distortion",
+       "qty": "",
+       "bg": null,
+       "unavailable": false
+      },
+      {
+       "id": "boss|DISTORTION|HM-2W|Heavy Metal",
+       "sub": "HM-2W",
+       "name": "Heavy Metal",
+       "qty": "",
+       "bg": null,
+       "unavailable": false
+      },
+      {
+       "id": "boss|DISTORTION|JB-2|Angry Driver",
+       "sub": "JB-2",
+       "name": "Angry Driver",
+       "qty": "",
+       "bg": null,
+       "unavailable": false
+      },
+      {
+       "id": "boss|DISTORTION|MD-2|Mega Distortion",
+       "sub": "MD-2",
+       "name": "Mega Distortion",
+       "qty": "",
+       "bg": null,
+       "unavailable": false
+      },
+      {
+       "id": "boss|DISTORTION|ML-2|Metal Core",
+       "sub": "ML-2",
+       "name": "Metal Core",
+       "qty": "",
+       "bg": null,
+       "unavailable": false
+      },
+      {
+       "id": "boss|DISTORTION|MT-2W|Metal Zone",
+       "sub": "MT-2W",
+       "name": "Metal Zone",
+       "qty": "",
+       "bg": null,
+       "unavailable": false
+      },
+      {
+       "id": "boss|DISTORTION|ST-2|Power Stack",
+       "sub": "ST-2",
+       "name": "Power Stack",
+       "qty": "",
+       "bg": null,
+       "unavailable": false
+      }
+     ]
+    },
+    {
+     "name": "DYNAMICS / FILTER",
+     "items": [
+      {
+       "id": "boss|DYNAMICS / FILTER|AW-3|Dynamic Wah",
+       "sub": "AW-3",
+       "name": "Dynamic Wah",
+       "qty": "",
+       "bg": null,
+       "unavailable": false
+      },
+      {
+       "id": "boss|DYNAMICS / FILTER|CP-1X|Compressor",
+       "sub": "CP-1X",
+       "name": "Compressor",
+       "qty": "",
+       "bg": null,
+       "unavailable": false
+      },
+      {
+       "id": "boss|DYNAMICS / FILTER|CS-3|Compression Sustainer",
+       "sub": "CS-3",
+       "name": "Compression Sustainer",
+       "qty": "",
+       "bg": null,
+       "unavailable": false
+      },
+      {
+       "id": "boss|DYNAMICS / FILTER|GE-7|Equalizer",
+       "sub": "GE-7",
+       "name": "Equalizer",
+       "qty": "",
+       "bg": null,
+       "unavailable": false
+      },
+      {
+       "id": "boss|DYNAMICS / FILTER|SL-2|Slicer",
+       "sub": "SL-2",
+       "name": "Slicer",
+       "qty": "",
+       "bg": null,
+       "unavailable": false
+      }
+     ]
+    },
+    {
+     "name": "FUZZ",
+     "items": [
+      {
+       "id": "boss|FUZZ|FZ-1W|Fuzz",
+       "sub": "FZ-1W",
+       "name": "Fuzz",
+       "qty": "",
+       "bg": null,
+       "unavailable": false
+      },
+      {
+       "id": "boss|FUZZ|FZ-5|Fuzz",
+       "sub": "FZ-5",
+       "name": "Fuzz",
+       "qty": "",
+       "bg": null,
+       "unavailable": false
+      }
+     ]
+    },
+    {
+     "name": "OVERDRIVE",
+     "items": [
+      {
+       "id": "boss|OVERDRIVE|BD-2W|Blues Driver",
+       "sub": "BD-2W",
+       "name": "Blues Driver",
+       "qty": "",
+       "bg": null,
+       "unavailable": false
+      },
+      {
+       "id": "boss|OVERDRIVE|OD-1X|OverDrive",
+       "sub": "OD-1X",
+       "name": "OverDrive",
+       "qty": "",
+       "bg": null,
+       "unavailable": false
+      },
+      {
+       "id": "boss|OVERDRIVE|OD-3|OverDrive",
+       "sub": "OD-3",
+       "name": "OverDrive",
+       "qty": "",
+       "bg": null,
+       "unavailable": false
+      },
+      {
+       "id": "boss|OVERDRIVE|OS-2|OverDrive / Distortion",
+       "sub": "OS-2",
+       "name": "OverDrive / Distortion",
+       "qty": "",
+       "bg": null,
+       "unavailable": false
+      },
+      {
+       "id": "boss|OVERDRIVE|SD-1W|SUPER OverDrive",
+       "sub": "SD-1W",
+       "name": "SUPER OverDrive",
+       "qty": "",
+       "bg": null,
+       "unavailable": false
+      }
+     ]
+    },
+    {
+     "name": "PITCH / MODULATION",
+     "items": [
+      {
+       "id": "boss|PITCH / MODULATION|BF-3|Flanger",
+       "sub": "BF-3",
+       "name": "Flanger",
+       "qty": "",
+       "bg": null,
+       "unavailable": false
+      },
+      {
+       "id": "boss|PITCH / MODULATION|CE-2W|Chorus",
+       "sub": "CE-2W",
+       "name": "Chorus",
+       "qty": "",
+       "bg": null,
+       "unavailable": false
+      },
+      {
+       "id": "boss|PITCH / MODULATION|CE-5|Chorus Ensemble",
+       "sub": "CE-5",
+       "name": "Chorus Ensemble",
+       "qty": "",
+       "bg": null,
+       "unavailable": false
+      },
+      {
+       "id": "boss|PITCH / MODULATION|CH-1|SUPER Chorus",
+       "sub": "CH-1",
+       "name": "SUPER Chorus",
+       "qty": "",
+       "bg": null,
+       "unavailable": false
+      },
+      {
+       "id": "boss|PITCH / MODULATION|DC-2W|Dimension C",
+       "sub": "DC-2W",
+       "name": "Dimension C",
+       "qty": "",
+       "bg": null,
+       "unavailable": false
+      },
+      {
+       "id": "boss|PITCH / MODULATION|MO-2|Multi Overtone",
+       "sub": "MO-2",
+       "name": "Multi Overtone",
+       "qty": "",
+       "bg": null,
+       "unavailable": false
+      },
+      {
+       "id": "boss|PITCH / MODULATION|OC-5|Octave",
+       "sub": "OC-5",
+       "name": "Octave",
+       "qty": "",
+       "bg": null,
+       "unavailable": false
+      },
+      {
+       "id": "boss|PITCH / MODULATION|PH-3|Phase Shifter",
+       "sub": "PH-3",
+       "name": "Phase Shifter",
+       "qty": "",
+       "bg": null,
+       "unavailable": false
+      },
+      {
+       "id": "boss|PITCH / MODULATION|PS-6|Harmonist",
+       "sub": "PS-6",
+       "name": "Harmonist",
+       "qty": "",
+       "bg": null,
+       "unavailable": false
+      },
+      {
+       "id": "boss|PITCH / MODULATION|RT-2|Rotary Ensemble",
+       "sub": "RT-2",
+       "name": "Rotary Ensemble",
+       "qty": "",
+       "bg": null,
+       "unavailable": false
+      },
+      {
+       "id": "boss|PITCH / MODULATION|TR-2|Tremolo",
+       "sub": "TR-2",
+       "name": "Tremolo",
+       "qty": "",
+       "bg": null,
+       "unavailable": false
+      },
+      {
+       "id": "boss|PITCH / MODULATION|VB-2W|Vibrato",
+       "sub": "VB-2W",
+       "name": "Vibrato",
+       "qty": "",
+       "bg": null,
+       "unavailable": false
+      },
+      {
+       "id": "boss|PITCH / MODULATION|XS-1|Poly Shifter",
+       "sub": "XS-1",
+       "name": "Poly Shifter",
+       "qty": "",
+       "bg": null,
+       "unavailable": false
+      }
+     ]
+    },
+    {
+     "name": "PLUGOUT FX",
+     "items": [
+      {
+       "id": "boss|PLUGOUT FX|PX-1|Plugout FX",
+       "sub": "PX-1",
+       "name": "Plugout FX",
+       "qty": "",
+       "bg": null,
+       "unavailable": false
+      }
+     ]
+    },
+    {
+     "name": "REVERB",
+     "items": [
+      {
+       "id": "boss|REVERB|RE-2|Space Echo",
+       "sub": "RE-2",
+       "name": "Space Echo",
+       "qty": "",
+       "bg": null,
+       "unavailable": false
+      },
+      {
+       "id": "boss|REVERB|RV-6|Reverb",
+       "sub": "RV-6",
+       "name": "Reverb",
+       "qty": "",
+       "bg": null,
+       "unavailable": false
+      }
+     ]
+    },
+    {
+     "name": "SYNTH",
+     "items": [
+      {
+       "id": "boss|SYNTH|SY-1|Synthesizer",
+       "sub": "SY-1",
+       "name": "Synthesizer",
+       "qty": "",
+       "bg": null,
+       "unavailable": false
+      }
+     ]
+    },
+    {
+     "name": "UTILITY",
+     "items": [
+      {
+       "id": "boss|UTILITY|LS-2|Line Selector",
+       "sub": "LS-2",
+       "name": "Line Selector",
+       "qty": "",
+       "bg": null,
+       "unavailable": false
+      },
+      {
+       "id": "boss|UTILITY|NS-1X|Noise Suppressor",
+       "sub": "NS-1X",
+       "name": "Noise Suppressor",
+       "qty": "",
+       "bg": null,
+       "unavailable": false
+      },
+      {
+       "id": "boss|UTILITY|NS-2|Noise Suppressor",
+       "sub": "NS-2",
+       "name": "Noise Suppressor",
+       "qty": "",
+       "bg": null,
+       "unavailable": false
+      },
+      {
+       "id": "boss|UTILITY|VO-1|Vocoder",
+       "sub": "VO-1",
+       "name": "Vocoder",
+       "qty": "",
+       "bg": null,
+       "unavailable": false
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "stale": false
+}

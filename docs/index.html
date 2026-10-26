@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<meta name="referrer" content="no-referrer">
+<title>レコーディング事前ヒアリングフォーム</title>
+<link rel="stylesheet" href="style.css?v=27">
+</head>
+<body>
+
+<div class="layout">
+
+  <nav id="toc" class="toc" aria-label="質問の目次">
+    <p class="toc__title">目次</p>
+    <ol id="toc-list" class="toc__list">
+      <!-- 目次は script.js によってここに動的に描画されます -->
+    </ol>
+  </nav>
+
+  <div class="app">
+
+    <!-- 保存データ復元バナー -->
+    <div id="resume-banner" class="resume-banner" hidden>
+      <p>保存された回答が見つかりました。続きから再開しますか？</p>
+      <div class="resume-banner__actions">
+        <button type="button" id="resume-continue" class="btn btn--primary">続きから再開する</button>
+        <button type="button" id="resume-restart" class="btn btn--ghost">はじめからやり直す</button>
+      </div>
+    </div>
+
+    <header class="app-header">
+      <h1 class="app-title">レコーディング事前ヒアリング</h1>
+      <div class="progress">
+        <div class="progress__bar">
+          <div id="progress-fill" class="progress__fill"></div>
+        </div>
+        <p class="progress__label">
+          <span id="progress-current">1</span> / <span id="progress-total">14</span>
+        </p>
+      </div>
+    </header>
+
+    <main class="form-stage">
+      <form id="hearing-form" novalidate>
+        <div id="question-container" class="question-container">
+          <!-- 質問は script.js によってここに動的に描画されます -->
+        </div>
+      </form>
+    </main>
+
+    <footer class="app-footer">
+      <button type="button" id="btn-save" class="btn btn--text">一時保存して終了</button>
+      <div class="app-footer__nav">
+        <button type="button" id="btn-prev" class="btn btn--ghost">戻る</button>
+        <button type="button" id="btn-next" class="btn btn--primary">次へ</button>
+      </div>
+    </footer>
+
+    <p id="save-toast" class="save-toast" hidden>保存しました</p>
+
+  </div>
+
+</div>
+
+<script src="config.js?v=27"></script>
+<script src="script.js?v=27"></script>
+</body>
+</html>
