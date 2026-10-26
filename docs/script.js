@@ -1205,11 +1205,48 @@
     renderToc();
   }
 
+  // 「ご回答ありがとうございました！」のページに表示するお知らせ（文面やリンクはここで変更できる）
+  const thanksSections = [
+    {
+      title: "①レコーディング当日までに下記リンクから構成譜を作成くださいませ",
+      links: [{ label: "https://booking.applevinegar-ms.com/structure", url: "https://booking.applevinegar-ms.com/structure" }],
+      note: "※当日の作業がかなりスムーズになります。\n難しい場合は当日に一緒に作らせていただくことも可能です。\n送信先は吉井を選択くださいませ。",
+    },
+    {
+      title: "②担当させていただく吉井のポートフォリオ",
+      links: [
+        { label: "作曲・Rec・Mix・Mastering etc.", url: "https://ornate-stardust-86f480.netlify.app/" },
+        { label: "Instagram", url: "https://www.instagram.com/hanna_zonnne/" },
+      ],
+    },
+  ];
+
+  function thanksSectionsMarkup() {
+    return thanksSections
+      .map(
+        (section) => `
+        <section class="thanks__item">
+          <h3 class="thanks__title">${escapeHtml(section.title)}</h3>
+          <div class="thanks__links">
+            ${section.links
+              .map(
+                (link) =>
+                  `<a class="thanks__link" href="${escapeHtml(link.url)}" target="_blank" rel="noopener noreferrer">${escapeHtml(link.label)}</a>`
+              )
+              .join("")}
+          </div>
+          ${section.note ? `<p class="thanks__note">${escapeHtml(section.note)}</p>` : ""}
+        </section>`
+      )
+      .join("");
+  }
+
   function renderThanks() {
     el.container.innerHTML = `
       <div class="complete">
         <div class="complete__icon">✅</div>
         <h2 class="complete__title">ご回答ありがとうございました！</h2>
+        <div class="thanks">${thanksSectionsMarkup()}</div>
         <p class="complete__note">${RESEND_NOTE}</p>
       </div>
     `;
