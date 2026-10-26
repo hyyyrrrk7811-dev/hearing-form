@@ -55,7 +55,7 @@
       type: "text",
       title: "バンド名",
       required: true,
-      example: "Claude Code バンド",
+      example: "Fujieda Band",
     },
     {
       id: "members",
@@ -133,7 +133,7 @@
       type: "text",
       title: "ドラムのタム構成",
       required: true,
-      example: "ハイタム1基、フロアタム1基（計2基）",
+      example: "ハイタム1個、フロアタム1個（計2個）",
     },
     {
       id: "recordingMethod",
@@ -1482,15 +1482,14 @@
   el.btnPrev.addEventListener("click", goPrev);
   el.btnSave.addEventListener("click", saveAndExit);
 
-  // Enterキーでの誤送信を防ぎつつ、テキスト欄では次へ進めるようにする
-  document.getElementById("hearing-form").addEventListener("keydown", (e) => {
-    // テキスト入力欄でのEnterだけ「次へ」にする（ボタン上のEnterはボタン本来の動作に任せる）
+  // 入力欄でEnterを押しても、次のページへは進まない。
+  // （入力欄が1つだけのページで、Enterによるフォーム送信＝ページの再読み込みが起きないように、送信自体も止める）
+  const form = document.getElementById("hearing-form");
+  form.addEventListener("keydown", (e) => {
     const isTextInput = e.target.tagName === "INPUT" && ["text", "email"].includes(e.target.type);
-    if (e.key === "Enter" && isTextInput && state.step < confirmIndex) {
-      e.preventDefault();
-      goNext();
-    }
+    if (e.key === "Enter" && isTextInput) e.preventDefault();
   });
+  form.addEventListener("submit", (e) => e.preventDefault());
 
   // サーバーに保存した回答を開く。サーバーに無い・通信できないときは、ブラウザの控えを使う。
   async function openDraft(id, page, fallback = null) {
