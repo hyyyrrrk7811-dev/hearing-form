@@ -1429,3 +1429,32 @@ body {
   color: var(--color-text-muted);
   white-space: pre-line;
 }
+
+/* ---------- Guitar amp usage (ギターアンプ・キャビネットの使い道) ---------- */
+
+.amp-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.amp-item {
+  padding: 14px 16px 16px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  background: var(--color-surface);
+}
+
+.amp-item__name {
+  margin: 0 0 10px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  overflow-wrap: anywhere;
+}
+
+.amp-item__group {
+  display: block;
+  margin-bottom: 2px;
+  font-size: 0.75rem;
+  color: var(--color-primary-dark);
+}

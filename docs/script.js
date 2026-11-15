@@ -121,6 +121,17 @@
       example: "ドラム：お任せ",
     },
     {
+      id: "guitarAmpUsage",
+      type: "amp-usage",
+      title: "ギターアンプ・キャビネットの使い道",
+      description:
+        "レンタルを選択されたギターアンプ・ギターキャビネットは、リードギター用ですか？リズムギター用ですか？（両方に使う場合は、両方を選んでください）",
+      required: true,
+      // 前のページで、ギターアンプかギターキャビネットのどちらか（または両方）を選んだときだけ表示するページ
+      showIf: (answers) => guitarAmpItems(answers).length > 0,
+      uses: ["リードギター用", "リズムギター用"],
+    },
+    {
       id: "ownEquipment",
       type: "textarea",
       title: "持ち込み機材",
@@ -142,13 +153,19 @@
       description:
         "各曲の録音方法を選んでください（「同時録音」と「個別」は両方選べます）。6ページ目で入力した曲が録音順に表示されます。同時録音（3ブース）の場合は、下記の組み合わせから選んでください。「個別」を選ぶと、7ページ目で選んだ楽器の中から、個別に録音するものを選べます。録音方法は「コピー」して、他の曲に「ペースト」できます。\n※ボーカルは原則個別で録ります。同時録音を希望したい場合、いくつかの制約が発生するため、ご了承ください",
       required: true,
+      // 同時録音は最大3つまで。ギターは、リードギターとリズムギターに分けている。
+      // 先頭の3つ（ドラム・ベース系）は、この並びで固定。
       simultaneousOptions: [
-        "ドラム・ギター・ベース",
-        "ドラム・ギター・ギター",
-        "ドラム・ギター・アコギ",
+        "ドラム・ベース・リズムギター",
+        "ドラム・ベース・リードギター",
+        "ドラム・ベース",
+        "ドラム・リードギター・リズムギター",
+        "ドラム・リードギター・アコギ",
+        "ドラム・リズムギター・アコギ",
         "ドラム・ベース・アコギ",
-        "ギター・ギター",
-        "ギター・ベース",
+        "リードギター・リズムギター",
+        "リードギター・ベース",
+        "リズムギター・ベース",
       ],
     },
     {
@@ -222,6 +239,13 @@
         { value: "その他", withText: true },
       ],
     },
+    {
+      id: "otherNotes",
+      type: "textarea",
+      title: "その他質問や共有事項",
+      description: "何かご質問がございましたらこちらにご記入ください",
+      required: false,
+    },
   ];
 
   const totalSteps = questions.length;
@@ -258,6 +282,33 @@
     "また、回答内容に変更がある場合は再度送信してください。このページを保存しておけば部分的に修正して再送信できます。";
   const DRAFT_ID_PATTERN = /^[A-Za-z0-9_-]{22,64}$/;
 
+  // 保存データの版。ページを途中に追加するたびに、それより後ろのページ番号が1つずれる。
+  // 版のない古い保存データは、開くときに、ページの番号（step / maxStep / URLのページ番号）を順に補正する。
+  //   版2: 「ギターアンプ・キャビネットの使い道」を、位置8に追加
+  //   版3: 「その他質問や共有事項」を、位置16（最終確認の手前）に追加
+  const STATE_VERSION = 3;
+  const PAGE_INSERTIONS = [
+    { version: 2, at: 8 },
+    { version: 3, at: 16 },
+  ];
+
+  function upgradeRecord(record, page) {
+    const answers = record.answers || {};
+    let step = record.step ?? 0;
+    let maxStep = record.maxStep ?? step;
+    let wanted = page;
+    if (Object.keys(answers).length > 0) {
+      const version = answers._v ?? 1;
+      PAGE_INSERTIONS.filter((insertion) => version < insertion.version).forEach((insertion) => {
+        const shift = (n) => (n >= insertion.at ? n + 1 : n);
+        step = shift(step);
+        maxStep = shift(maxStep);
+        if (Number.isInteger(wanted) && wanted >= 1) wanted = shift(wanted - 1) + 1;
+      });
+    }
+    return { step, maxStep, answers, page: wanted };
+  }
+
   let draftId = null;
   let saveTimer = null;
   let savePromise = Promise.resolve(true);
@@ -278,6 +329,7 @@
   }
 
   function localSave() {
+    state.answers._v = STATE_VERSION;
     try {
       localStorage.setItem(STORAGE_KEY, JSON.stringify({ ...state, draftId }));
     } catch (e) {
@@ -313,6 +365,7 @@
   }
 
   function draftPayload() {
+    state.answers._v = STATE_VERSION;
     return { id: draftId, step: state.step, maxStep: state.maxStep ?? 0, answers: state.answers };
   }
 
@@ -737,6 +790,36 @@
         </div>`;
     }
 
+    if (q.type === "amp-usage") {
+      const saved = Array.isArray(value) ? value : [];
+      return `
+        <div class="amp-list" id="field-${q.id}" data-question="${q.id}">
+          ${guitarAmpItems(state.answers)
+            .map((item) => {
+              const uses = (saved.find((entry) => entry.id === item.id) || {}).uses || [];
+              return `
+            <div class="amp-item" data-id="${escapeHtml(item.id)}" data-label="${escapeHtml(ampLabel(item))}">
+              <p class="amp-item__name">
+                <span class="amp-item__group">${escapeHtml(item.group)}</span>
+                ${escapeHtml([item.sub, String(item.name || "").replace(/\n/g, " / ")].filter(Boolean).join(" "))}
+              </p>
+              <div class="options">
+                ${q.uses
+                  .map(
+                    (use) => `
+                <label class="option">
+                  <input type="checkbox" data-role="amp-use" value="${escapeHtml(use)}" ${uses.includes(use) ? "checked" : ""}>
+                  <span class="option__text">${escapeHtml(use)}</span>
+                </label>`
+                  )
+                  .join("")}
+              </div>
+            </div>`;
+            })
+            .join("")}
+        </div>`;
+    }
+
     if (q.type === "song-methods") {
       const songs = Array.isArray(state.answers.songInfo) ? state.answers.songInfo.filter((song) => song.id) : [];
       const saved = Array.isArray(value) ? value : [];
@@ -863,6 +946,42 @@
   const doneIndex = totalSteps + 1;
   let submitting = false;
 
+  // ---------- 条件つきのページ ----------
+  // 質問に showIf があると、その条件を満たすときだけページが現れる。
+  // ページの番号（state.step）は、条件にかかわらず質問の並び（questions）の位置のまま。表示と移動のときだけ、現れないページを飛ばす。
+
+  const GUITAR_AMP_GROUPS = ["guitar amp", "guitar cabinet"]; // 機材リスト（PDF）の分類名
+
+  function guitarAmpItems(answers) {
+    const selected = answers.rentalNeeds && Array.isArray(answers.rentalNeeds.selected) ? answers.rentalNeeds.selected : [];
+    return selected.filter((item) => GUITAR_AMP_GROUPS.includes(String(item.group || "").trim().toLowerCase()));
+  }
+
+  function ampLabel(item) {
+    return `${item.group}：${[item.sub, String(item.name || "").replace(/\n/g, " / ")].filter(Boolean).join(" ")}`;
+  }
+
+  const isActive = (q) => !q.showIf || q.showIf(state.answers);
+
+  function activeIndices() {
+    return questions.map((q, i) => i).filter((i) => isActive(questions[i]));
+  }
+
+  function nextStep(from) {
+    for (let i = from + 1; i < totalSteps; i++) if (isActive(questions[i])) return i;
+    return confirmIndex;
+  }
+
+  function prevStep(from) {
+    if (from > confirmIndex) return confirmIndex;
+    for (let i = from - 1; i >= 0; i--) if (isActive(questions[i])) return i;
+    return 0;
+  }
+
+  // 画面に表示するページ番号（現れないページを数えない）と、ページの総数（最終確認を含む）
+  const pageNumber = (index) => activeIndices().filter((i) => i <= index).length;
+  const pageCount = () => activeIndices().length + 1;
+
   function reachedStep() {
     if (state.step > confirmIndex) return confirmIndex;
     return Math.min(Math.max(state.step, state.maxStep ?? 0), confirmIndex);
@@ -873,8 +992,14 @@
     const finished = state.step > confirmIndex;
 
     syncUrl();
-    el.tocList.innerHTML = [...questions.map((q) => q.title), "最終確認"]
-      .map((title, i) => {
+    const entries = [
+      ...activeIndices().map((i) => ({ index: i, title: questions[i].title })),
+      { index: confirmIndex, title: "最終確認" },
+    ];
+    el.tocList.innerHTML = entries
+      .map((entry, n) => {
+        const i = entry.index;
+        const title = entry.title;
         let status = "upcoming";
         if (!finished && i === state.step) status = "current";
         else if (i <= reached) status = "done";
@@ -886,7 +1011,7 @@
         return `
           <li class="toc__item toc__item--${status}">
             <${tag} ${typeAttr} class="toc__link" data-step="${i}" ${clickable ? "" : "disabled"}>
-              <span class="toc__number">${status === "done" ? "✓" : i + 1}</span>
+              <span class="toc__number">${status === "done" ? "✓" : n + 1}</span>
               <span class="toc__label">${escapeHtml(title)}</span>
             </${tag}>
           </li>`;
@@ -896,6 +1021,7 @@
 
   function jumpToStep(index) {
     if (index < 0 || index > confirmIndex || index > reachedStep()) return;
+    if (index < confirmIndex && !isActive(questions[index])) return;
     if (state.step < totalSteps) readCurrentAnswer();
     state.step = index;
     persist();
@@ -1034,6 +1160,13 @@
       return;
     }
 
+    // 条件を満たさないページ（保存したURLのページ番号など）は、次のページへ飛ばす
+    if (!isActive(questions[state.step])) {
+      state.step = nextStep(state.step);
+      renderQuestion();
+      return;
+    }
+
     el.footer.hidden = false;
     el.btnNext.hidden = false;
     el.btnSave.hidden = false;
@@ -1061,7 +1194,7 @@
 
     el.btnPrev.disabled = state.step === 0;
     el.btnPrev.style.visibility = state.step === 0 ? "hidden" : "visible";
-    el.btnNext.textContent = state.step === totalSteps - 1 ? "確認する" : "次へ";
+    el.btnNext.textContent = nextStep(state.step) === confirmIndex ? "確認する" : "次へ";
 
     updateProgress();
     renderToc();
@@ -1134,6 +1267,11 @@
         return list.map((item) => `${songLabel(item)}：${methodSummary(item)}`);
       case "song-links":
         return list.map((item) => `${songLabel(item)}：${item.url}`);
+      case "amp-usage":
+        return guitarAmpItems(state.answers).map((item) => {
+          const entry = list.find((x) => x.id === item.id);
+          return `${ampLabel(item)}：${entry && entry.uses.length ? entry.uses.join("、") : "（未選択）"}`;
+        });
       case "radio-other": {
         if (!value || !value.choice) return [];
         return [value.other ? `${value.choice}：${value.other}` : value.choice];
@@ -1144,13 +1282,16 @@
   }
 
   function buildSummary() {
-    return questions.map((q, i) => ({
-      index: i,
-      no: i + 1,
-      title: q.title,
-      missing: Boolean(q.required && answerError(q)),
-      lines: answerLines(q, state.answers[q.id]),
-    }));
+    return activeIndices().map((i, n) => {
+      const q = questions[i];
+      return {
+        index: i,
+        no: n + 1,
+        title: q.title,
+        missing: Boolean(q.required && answerError(q)),
+        lines: answerLines(q, state.answers[q.id]),
+      };
+    });
   }
 
   function summaryText() {
@@ -1264,7 +1405,7 @@
     if (submitting) return;
     const errorEl = document.getElementById("field-error");
 
-    const missing = questions.find((q) => q.required && answerError(q));
+    const missing = questions.find((q) => q.required && isActive(q) && answerError(q));
     if (missing) {
       errorEl.textContent = `必須項目「${missing.title}」が未入力です。「修正する」から入力してください。`;
       return;
@@ -1305,9 +1446,11 @@
   }
 
   function updateProgress() {
-    const current = Math.min(state.step + 1, totalSteps + 1);
+    const total = pageCount();
+    const current = state.step >= confirmIndex ? total : pageNumber(state.step);
     el.progressCurrent.textContent = current;
-    el.progressFill.style.width = `${(current / (totalSteps + 1)) * 100}%`;
+    el.progressTotal.textContent = total;
+    el.progressFill.style.width = `${(current / total) * 100}%`;
   }
 
   function readCurrentAnswer() {
@@ -1344,6 +1487,12 @@
           url: card.querySelector(".link-song__input").value.trim(),
         }))
         .filter((song) => song.url);
+    } else if (q.type === "amp-usage") {
+      state.answers[q.id] = [...document.querySelectorAll(`#field-${q.id} .amp-item`)].map((card) => ({
+        id: card.dataset.id,
+        label: card.dataset.label,
+        uses: [...card.querySelectorAll('[data-role="amp-use"]:checked')].map((box) => box.value),
+      }));
     } else if (q.type === "song-methods") {
       state.answers[q.id] = [...document.querySelectorAll(`#field-${q.id} .rec-song`)]
         .map((card) => ({ id: card.dataset.id, title: card.dataset.title, ...readMethodCard(card) }))
@@ -1397,6 +1546,17 @@
       return option.withText && !option.textOptional && !value.other ? "内容を入力してください。" : "";
     }
 
+    if (q.type === "amp-usage") {
+      const entries = Array.isArray(state.answers[q.id]) ? state.answers[q.id] : [];
+      const complete = guitarAmpItems(state.answers).every((item) => {
+        const entry = entries.find((x) => x.id === item.id);
+        return entry && entry.uses.length;
+      });
+      return complete
+        ? ""
+        : "すべてのギターアンプ・キャビネットについて、リードギター用かリズムギター用かを選んでください（両方に使う場合は両方を選んでください）。";
+    }
+
     if (q.type === "song-methods") {
       const answers = Array.isArray(state.answers[q.id]) ? state.answers[q.id] : [];
       const complete = songIds().every((id) => {
@@ -1435,7 +1595,7 @@
     readCurrentAnswer();
     if (!validateCurrent()) return;
 
-    state.step += 1;
+    state.step = nextStep(state.step);
     state.maxStep = Math.max(state.maxStep ?? 0, state.step);
     persist();
     renderQuestion();
@@ -1445,7 +1605,7 @@
   function goPrev() {
     if (state.step === 0) return;
     readCurrentAnswer();
-    state.step -= 1;
+    state.step = prevStep(state.step);
     persist();
     renderQuestion();
     window.scrollTo(0, 0);
@@ -1497,6 +1657,9 @@
     if (state.step >= totalSteps) return;
     readCurrentAnswer();
     persistSoon();
+    // 機材の選択によってページが増減することがあるので、ページ数の表示と目次を更新する
+    updateProgress();
+    renderToc();
   }
 
   el.container.addEventListener("input", onEdit);
@@ -1544,14 +1707,11 @@
     }
 
     if (record) {
-      state = {
-        step: record.step ?? 0,
-        maxStep: record.maxStep ?? record.step ?? 0,
-        answers: record.answers || {},
-      };
+      const upgraded = upgradeRecord(record, page);
+      state = { step: upgraded.step, maxStep: upgraded.maxStep, answers: upgraded.answers };
       // URLのページ番号（p）があればそのページから。まだ到達していないページには進ませない
       const reached = Math.min(Math.max(state.step, state.maxStep), doneIndex);
-      if (Number.isInteger(page) && page >= 1) state.step = Math.min(page - 1, reached);
+      if (Number.isInteger(upgraded.page) && upgraded.page >= 1) state.step = Math.min(upgraded.page - 1, reached);
       localSave();
     } else {
       state = { step: 0, maxStep: 0, answers: {} };
@@ -1581,7 +1741,8 @@
         if (saved.draftId && DRAFT_ID_PATTERN.test(saved.draftId)) {
           await openDraft(saved.draftId, saved.step + 1, saved);
         } else {
-          state = { step: saved.step, maxStep: saved.maxStep ?? saved.step, answers: saved.answers };
+          const upgraded = upgradeRecord(saved, undefined);
+          state = { step: upgraded.step, maxStep: upgraded.maxStep, answers: upgraded.answers };
           el.resumeBanner.hidden = true;
           persist();
           renderQuestion();
