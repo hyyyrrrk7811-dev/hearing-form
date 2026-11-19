@@ -1,11 +1,11 @@
 {
  "source": "https://www.applevinegarmusicsupport.com/pdf/mif/equipments.pdf",
- "fetchedAt": "2026-11-18T20:14:41+00:00",
+ "fetchedAt": "2026-11-19T20:18:52+00:00",
  "sections": [
   {
    "id": "instruments",
    "title": "Instruments",
-   "lastUpdate": "2026/10/16",
+   "lastUpdate": "2026/11/18",
    "groups": [
     {
      "name": "Drum Set",
@@ -373,12 +373,12 @@
        "unavailable": false
       },
       {
-       "id": "instruments|Bass Amp|AMPEG|B-15N 60's Vintage (30W) ※メンテナンス中",
+       "id": "instruments|Bass Amp|AMPEG|B-15N 60's Vintage (30W)",
        "sub": "AMPEG",
-       "name": "B-15N 60's Vintage (30W) ※メンテナンス中",
+       "name": "B-15N 60's Vintage (30W)",
        "qty": "1",
        "bg": "#fff2cc",
-       "unavailable": true
+       "unavailable": false
       }
      ]
     },
@@ -503,7 +503,7 @@
   {
    "id": "boss",
    "title": "BOSS Pedals",
-   "lastUpdate": "2026/10/16",
+   "lastUpdate": "2026/11/18",
    "groups": [
     {
      "name": "ACOUSTIC",
